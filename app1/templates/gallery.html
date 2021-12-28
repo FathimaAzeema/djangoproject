@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+<body style="background-color:lightgrey;">
+<div class="container-fluid">
+<div class="row">
+{% for photo in photos %}
+<div class="col-md-4">
+<img src="{{ photo.image.url }}" height="300px" width="300px" style="border:3px solid black;">
+<div>
+<p style="font-weight:bold; color:brown;">Flower</p>
+</div>
+<a href="{% url 'app1:viewphoto' photo.id %}" class="btn btn-link btn-sm">View</a>
+</div>
+{% endfor %}
+</div>
+</div>
+</body>
+</html>
